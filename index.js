@@ -2784,7 +2784,7 @@ insertRow(1, {"0":"时间跨度1", "1":"总结大纲", "2":"AM01"})
 
       const headerRow = Array.isArray(outline.content[0]) ? outline.content[0] : [];
       const headers = headerRow.slice(1).map(h => String(h ?? '').trim()).filter(Boolean);
-      let out = `## 表格: 总体大纲\n`;
+      let out = `## Bảng: Đại cương cốt truyện\n`;
       out += headers.length ? `Columns: ${headers.join(', ')}\n` : 'Columns: (无表头)\n';
 
       const rows = outline.content.slice(1).filter(r => Array.isArray(r));
