@@ -2777,7 +2777,7 @@ insertRow(1, {"0":"时间跨度1", "1":"总结大纲", "2":"AM01"})
         return '总体大纲表：未获取到表格数据。';
       }
       const sheets = Object.values(allTablesJson).filter(x => x && typeof x === 'object' && x.name && x.content);
-      const outline = sheets.find(s => String(s.name || '').trim() === '总体大纲');
+      const outline = sheets.find(s => String(s.name || '').trim() === 'Đại cương cốt truyện');
       if (!outline || !Array.isArray(outline.content) || outline.content.length === 0) {
         return '总体大纲表：未找到该表或表结构为空。';
       }
@@ -11836,7 +11836,7 @@ insertRow(1, ["时间2", "大纲事件2...", "关键词"]);
             let startIndex = 0;
 
             // [新增] 如果是总结表并且行数超过10，则只提取最新的10条
-            if (table.name.trim() === '总结表' && allRows.length > 10) {
+            if (table.name.trim() === 'Nhật ký tổng kết' || '总结表' && allRows.length > 10) {
                 startIndex = allRows.length - 10;
                 rowsToProcess = allRows.slice(-10);
                 tableDataText += `  - Note: Showing last ${rowsToProcess.length} of ${allRows.length} entries.\n`;
